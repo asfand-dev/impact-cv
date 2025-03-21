@@ -72,7 +72,7 @@ To run ImpactCV locally, follow these steps:
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/asfand-dev/impact-cv.git](https://www.google.com/search?q=https://github.com/asfand-dev/impact-cv.git)
+    git clone https://github.com/asfand-dev/impact-cv.git
     cd impact-cv
     ```
 
