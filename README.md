@@ -51,7 +51,7 @@ Forget tedious formatting and generic templates. ImpactCV offers a streamlined e
 ## 🚀 Technology Stack
 
 -   **Frontend:** React, TypeScript, Vite, Tailwind CSS
--   **Components:** Radix UI, React Router, Lucide Icons
+-   **Components:** Radix UI, Lucide Icons
 -   **Utilities:** Date-fns, UUID, clsx, Sonner
 -   **AI Integration:** OpenAI API
 
