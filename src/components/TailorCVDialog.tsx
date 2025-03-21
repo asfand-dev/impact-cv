@@ -1,5 +1,5 @@
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -19,6 +19,11 @@ export function TailorCVDialog({ cvData, onTailored }: TailorCVDialogProps) {
   const [loading, setLoading] = useState(false);
   const [jobTitle, setJobTitle] = useState('');
   const [jobDescription, setJobDescription] = useState('');
+  const [openaiKey, setOpenaiKey] = useState(localStorage.getItem('impact-cv-openai-key'));
+
+  useEffect(() => {
+    localStorage.setItem('impact-cv-openai-key', openaiKey)
+  }, [openaiKey]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,7 +44,7 @@ export function TailorCVDialog({ cvData, onTailored }: TailorCVDialogProps) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_OPENAI_API_KEY || ''}`
+          'Authorization': `Bearer ${window.localStorage.getItem('impact-cv-openai-key') || import.meta.env.VITE_OPENAI_API_KEY || ''}`
         },
         body: JSON.stringify({
           model: 'gpt-4o',
@@ -127,6 +132,19 @@ export function TailorCVDialog({ cvData, onTailored }: TailorCVDialogProps) {
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={handleSubmit} className="space-y-4 py-4">
+          <div className="space-y-2">
+            <Label htmlFor="job-title" className="text-sm font-medium">
+              OpenAI API Key (More details on <a className="text-blue-500" href="https://help.openai.com/en/articles/4936850-where-do-i-find-my-openai-api-key" target="_blank">OpenAI</a>)
+            </Label>
+            <Input
+              id="job-title"
+              value={openaiKey}
+              onChange={(e) => setOpenaiKey(e.target.value)}
+              placeholder="sk-proj***"
+              disabled={loading}
+              className="transition-all duration-200 focus:ring-2 focus:ring-primary/10"
+            />
+          </div>
           <div className="space-y-2">
             <Label htmlFor="job-title" className="text-sm font-medium">
               Job Title
