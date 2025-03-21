@@ -94,7 +94,7 @@ To run ImpactCV locally, follow these steps:
     pnpm dev
     ```
 
-    This will start the application on a local development server (usually `http://localhost:3000`).
+    This will start the application on a local development server (`http://localhost:3000`).
 
 ## ✍️ Usage
 
