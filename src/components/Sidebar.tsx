@@ -74,7 +74,7 @@ export function Sidebar({ data, onChange }: SidebarProps) {
     <div className="w-full h-full flex flex-col bg-gray-50/70 border-r backdrop-blur-sm">
       <div className="p-4 border-b flex justify-between items-center">
         <div>
-          <h2 className="text-lg font-medium">CV Editor</h2>
+          <h2 className="text-lg font-medium">ImpactCV</h2>
           <p className="text-sm text-muted-foreground">Configure your CV content and appearance</p>
         </div>
         

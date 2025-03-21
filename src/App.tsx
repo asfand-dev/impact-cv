@@ -40,7 +40,7 @@ function App() {
           <Toaster position="top-center" richColors />
           <Tabs defaultValue="edit" value={activeTab} onValueChange={setActiveTab} className="w-full h-full">
             <div className="p-4 border-b bg-white/90 backdrop-blur-md sticky top-0 z-10 shadow-sm">
-              <h1 className="text-2xl font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600">CV Editor</h1>
+              <h1 className="text-2xl font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-indigo-600">ImpactCV</h1>
               <TabsList className="grid grid-cols-2 w-full">
                 <TabsTrigger value="edit" className="transition-all">Edit</TabsTrigger>
                 <TabsTrigger value="preview" className="transition-all">Preview</TabsTrigger>
