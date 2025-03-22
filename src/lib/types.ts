@@ -76,6 +76,7 @@ export interface SectionVisibility {
   education: boolean;
   skills: boolean;
   projects: boolean;
+  [key: string]: boolean;
 }
 
 export interface SectionTitles {
@@ -84,9 +85,10 @@ export interface SectionTitles {
   education: string;
   skills: string;
   projects: string;
+  [key: string]: string;
 }
 
-export type SectionOrder = 'summary' | 'experiences' | 'education' | 'skills' | 'projects';
+export type SectionOrder = 'summary' | 'experiences' | 'education' | 'skills' | 'projects' | string;
 
 export interface CVConfig {
   theme: ThemeType;

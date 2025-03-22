@@ -173,6 +173,10 @@ export function Preview({ data }: PreviewProps) {
         return null;
       }
 
+      if(sectionKey && !['summary', 'experiences', 'education', 'skills', 'projects'].includes(sectionKey)) {
+        return renderGeneralSection(sectionKey);
+      }
+
       switch (sectionKey) {
         case 'summary':
           return renderSummarySection();
@@ -286,6 +290,26 @@ export function Preview({ data }: PreviewProps) {
               <div key={skill.id} className="cv-skill">
                 <h4 className="font-medium">{skill.title}</h4>
                 <p className="text-sm text-gray-700 mt-1">{skill.details}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+
+  const renderGeneralSection = (key: string) => {
+    if (data[key].length === 0 || !visibility[key]) return null;
+    
+    return (
+      <section key="skills" className="mb-6 animate-fade-in">
+        <h3 className={theme.sectionTitleStyle}>{titles[key]}</h3>
+        <div className={theme.sectionContentStyle}>
+          <div className="space-y-3">
+            {data[key].map((item) => (
+              <div key={item.id} className="cv-skill">
+                <h4 className="font-medium">{item.title}</h4>
+                <p className="text-sm text-gray-700 mt-1">{item.details}</p>
               </div>
             ))}
           </div>

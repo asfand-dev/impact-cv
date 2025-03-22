@@ -9,9 +9,11 @@ import { Experiences } from '@/components/sections/Experiences';
 import { Education } from '@/components/sections/Education';
 import { Skills } from '@/components/sections/Skills';
 import { Projects } from '@/components/sections/Projects';
+import { GeneralSection } from '@/components/sections/GeneralSection';
 import { ThemeSelector } from '@/components/ThemeSelector';
 import { TailorCVDialog } from '@/components/TailorCVDialog';
 import { ConfigurationPanel } from '@/components/ConfigurationPanel';
+import { AddSection } from '@/components/AddSectionPanel';
 import { DownloadOptions } from '@/components/DownloadOptions';
 import { CVData, ThemeType } from '@/lib/types';
 import { downloadJSON, readJSONFile } from '@/lib/utils';
@@ -29,6 +31,11 @@ import { toast } from 'sonner';
 interface SidebarProps {
   data: CVData;
   onChange: (data: CVData) => void;
+}
+
+interface Section {
+  id: string;
+  label: string;
 }
 
 export function Sidebar({ data, onChange }: SidebarProps) {
@@ -70,6 +77,20 @@ export function Sidebar({ data, onChange }: SidebarProps) {
     fileInputRef.current?.click();
   };
 
+  const sections: Section[] = Object.keys(data).filter(key => key !== 'activeTheme' && key !== 'sectionConfig').map(key => ({
+    id: key,
+    label: key.replace(/([A-Z])/g, ' $1').replace(/^./, str => str.toUpperCase()).trim()
+  }))
+
+  const Components = {
+    basicInfo: BasicInfo,
+    summary: Summary,
+    experiences: Experiences,
+    education: Education,
+    skills: Skills,
+    projects: Projects
+  }
+
   return (
     <div className="w-full h-full flex flex-col bg-gray-50/70 border-r backdrop-blur-sm">
       <div className="p-4 border-b flex justify-between items-center">
@@ -106,77 +127,20 @@ export function Sidebar({ data, onChange }: SidebarProps) {
             onValueChange={setExpandedSections}
             className="space-y-4"
           >
-            <AccordionItem value="basicInfo" className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <AccordionTrigger className="px-4 py-3 hover:bg-gray-100/50 transition-colors">
-                Basic Information
-              </AccordionTrigger>
-              <AccordionContent className="pt-2 px-4 pb-4">
-                <BasicInfo 
-                  data={data.basicInfo}
-                  onChange={(newData) => onChange({ ...data, basicInfo: newData })}
-                />
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="summary" className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <AccordionTrigger className="px-4 py-3 hover:bg-gray-100/50 transition-colors">
-                Summary
-              </AccordionTrigger>
-              <AccordionContent className="pt-2 px-4 pb-4">
-                <Summary 
-                  data={data.summary}
-                  onChange={(newData) => onChange({ ...data, summary: newData })}
-                />
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="experiences" className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <AccordionTrigger className="px-4 py-3 hover:bg-gray-100/50 transition-colors">
-                Experience
-              </AccordionTrigger>
-              <AccordionContent className="pt-2 px-4 pb-4">
-                <Experiences 
-                  data={data.experiences}
-                  onChange={(newData) => onChange({ ...data, experiences: newData })}
-                />
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="education" className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <AccordionTrigger className="px-4 py-3 hover:bg-gray-100/50 transition-colors">
-                Education
-              </AccordionTrigger>
-              <AccordionContent className="pt-2 px-4 pb-4">
-                <Education 
-                  data={data.education}
-                  onChange={(newData) => onChange({ ...data, education: newData })}
-                />
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="skills" className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <AccordionTrigger className="px-4 py-3 hover:bg-gray-100/50 transition-colors">
-                Skills
-              </AccordionTrigger>
-              <AccordionContent className="pt-2 px-4 pb-4">
-                <Skills 
-                  data={data.skills}
-                  onChange={(newData) => onChange({ ...data, skills: newData })}
-                />
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="projects" className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
-              <AccordionTrigger className="px-4 py-3 hover:bg-gray-100/50 transition-colors">
-                Projects
-              </AccordionTrigger>
-              <AccordionContent className="pt-2 px-4 pb-4">
-                <Projects 
-                  data={data.projects}
-                  onChange={(newData) => onChange({ ...data, projects: newData })}
-                />
-              </AccordionContent>
-            </AccordionItem>
+            {sections.map((section) => {
+              const Component = Components[section.id] ?? GeneralSection;
+              return <AccordionItem key={section.id} value={section.id} className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
+                        <AccordionTrigger className="px-4 py-3 hover:bg-gray-100/50 transition-colors">
+                          {section.label}
+                        </AccordionTrigger>
+                        <AccordionContent className="pt-2 px-4 pb-4">
+                          <Component 
+                            data={data[section.id]}
+                            onChange={(newData) => onChange({ ...data, [section.id]: newData })}
+                          />
+                        </AccordionContent>
+                    </AccordionItem>
+            })}
 
             <AccordionItem value="theme" className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
               <AccordionTrigger className="px-4 py-3 hover:bg-gray-100/50 transition-colors">
@@ -206,6 +170,7 @@ export function Sidebar({ data, onChange }: SidebarProps) {
                   <h3 className="text-sm font-medium">Configuration</h3>
                 </div>
                 <div className="grid grid-cols-1 gap-3">
+                  <AddSection cvData={data} onChange={onChange} />
                   <ConfigurationPanel cvData={data} onChange={onChange} />
                   <TailorCVDialog cvData={data} onTailored={handleTailoredCV} />
                 </div>
