@@ -13,7 +13,7 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import { Settings, MoveVertical, GripVertical } from 'lucide-react';
+import { Settings, MoveVertical, GripVertical, MoveUp, MoveDown } from 'lucide-react';
 import { SectionConfig, SectionVisibility, SectionTitles, SectionOrder, CVData } from '@/lib/types';
 import { toast } from 'sonner';
 
@@ -100,10 +100,7 @@ export function ConfigurationPanel({ cvData, onChange }: ConfigurationPanelProps
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button 
-          variant="outline" 
-          className="w-full flex items-center gap-2 justify-center"
-        >
+        <Button variant="link">
           <Settings className="h-4 w-4" />
           <span>Configure Sections</span>
         </Button>
@@ -147,7 +144,7 @@ export function ConfigurationPanel({ cvData, onChange }: ConfigurationPanelProps
                           disabled={index === 0}
                           className="h-8 w-8 p-0"
                         >
-                          <MoveVertical className="h-4 w-4 rotate-180" />
+                          <MoveUp className="h-4 w-4" />
                         </Button>
                         <Button 
                           variant="ghost" 
@@ -156,7 +153,7 @@ export function ConfigurationPanel({ cvData, onChange }: ConfigurationPanelProps
                           disabled={index === sectionConfig.order.length - 1}
                           className="h-8 w-8 p-0"
                         >
-                          <MoveVertical className="h-4 w-4" />
+                          <MoveDown className="h-4 w-4" />
                         </Button>
                       </div>
                     </div>
