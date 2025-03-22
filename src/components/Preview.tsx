@@ -234,7 +234,7 @@ export function Preview({ data }: PreviewProps) {
                     {exp.achievements.map((achievement, i) => (
                       <li key={i} className="flex items-start">
                         <span className="mr-2">•</span>
-                        <span>{achievement}</span>
+                        <span dangerouslySetInnerHTML={{ __html: achievement }} />
                       </li>
                     ))}
                   </ul>
@@ -339,7 +339,7 @@ export function Preview({ data }: PreviewProps) {
                     {project.details.map((detail, i) => (
                       <li key={i} className="flex items-start">
                         <span className="mr-2">•</span>
-                        <span>{detail}</span>
+                        <span dangerouslySetInnerHTML={{ __html: detail }} />
                       </li>
                     ))}
                   </ul>
