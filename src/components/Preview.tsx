@@ -304,7 +304,7 @@ export function Preview({ data }: PreviewProps) {
     if (data[key].length === 0 || !visibility[key]) return null;
     
     return (
-      <section key="skills" className="mb-6 animate-fade-in">
+      <section key={key} className="mb-6 animate-fade-in">
         <h3 className={theme.sectionTitleStyle}>{titles[key]}</h3>
         <div className={theme.sectionContentStyle}>
           <div className="space-y-3">
