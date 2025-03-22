@@ -263,12 +263,14 @@ export function Preview({ data }: PreviewProps) {
                     <div className="text-gray-700">{edu.institute}</div>
                     {edu.location && <div className="text-sm text-gray-600">{edu.location}</div>}
                   </div>
-                  <div className="flex items-center gap-1 text-sm text-gray-600">
+                  {edu.startDate && (edu.current || edu.endDate) && 
+                    <div className="flex items-center gap-1 text-sm text-gray-600">
                     <Calendar className="h-3 w-3" />
                     <span>
                       {formatDate(edu.startDate)} - {edu.current ? 'Present' : formatDate(edu.endDate)}
                     </span>
-                  </div>
+                    </div>
+                  }
                 </div>
               </div>
             ))}
