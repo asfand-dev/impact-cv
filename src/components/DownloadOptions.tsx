@@ -13,7 +13,7 @@ export function DownloadOptions({ cvData }: DownloadOptionsProps) {
   const [isGenerating, setIsGenerating] = useState(false);
 
   const generateHtmlContent = (): string => {
-    const cvDocument = document.querySelector("#cv-preview") as HTMLElement;
+    const cvDocument = document.querySelector("#cv-preview").cloneNode(true) as HTMLElement;
     cvDocument.style = "width: auto;";
     const content = cvDocument?.outerHTML;
 
