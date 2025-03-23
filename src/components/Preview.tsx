@@ -357,7 +357,7 @@ export function Preview({ data }: PreviewProps) {
   return (
     <div
       id="cv-preview"
-      style={{ width: 794, minWidth: 794 }}
+      style={{ width: 794 }}
       className={`paper ${theme.fontClass} ${theme.spacing} mx-auto overflow-auto transition-all duration-300 ease-in-out ${backgroundClass} ${cardStyle} ${borderStyle}`}
     >
       {hasPhoto ? renderPhotoHeader() : renderStandardHeader()}
