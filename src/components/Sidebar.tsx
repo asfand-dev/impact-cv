@@ -142,6 +142,11 @@ export function Sidebar({ data, onChange }: SidebarProps) {
                     </AccordionItem>
             })}
 
+            <div className="w-full flex items-center justify-between">
+              <AddSection cvData={data} onChange={onChange} />
+              <ConfigurationPanel cvData={data} onChange={onChange} />
+            </div>
+
             <AccordionItem value="theme" className="border rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all">
               <AccordionTrigger className="px-4 py-3 hover:bg-gray-100/50 transition-colors">
                 <div className="flex items-center gap-2">
@@ -170,8 +175,7 @@ export function Sidebar({ data, onChange }: SidebarProps) {
                   <h3 className="text-sm font-medium">Configuration</h3>
                 </div>
                 <div className="grid grid-cols-1 gap-3">
-                  <AddSection cvData={data} onChange={onChange} />
-                  <ConfigurationPanel cvData={data} onChange={onChange} />
+                  {/* <ConfigurationPanel cvData={data} onChange={onChange} /> */}
                   <TailorCVDialog cvData={data} onTailored={handleTailoredCV} />
                 </div>
               </div>

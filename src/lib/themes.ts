@@ -1,57 +1,52 @@
-
 import { ThemeConfig, ThemeType } from './types';
 
 export const themes: Record<ThemeType, ThemeConfig> = {
   basic: {
     id: 'basic',
     name: 'Basic',
-    color: 'text-themes-basic',
+    color: 'text-gray-700',
     fontClass: 'font-sans',
-    spacing: 'space-y-4',
+    spacing: 'p-4',
     headerStyle: 'text-2xl font-semibold',
-    sectionTitleStyle: 'text-lg font-semibold uppercase tracking-wide text-themes-basic border-b border-gray-200 pb-1 mb-3',
+    sectionTitleStyle: 'text-lg font-semibold uppercase tracking-wide text-gray-700 border-b border-gray-200 pb-1 mb-3',
     sectionContentStyle: 'mt-2',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmOGY4Ii8+PGxpbmUgeDE9IjEwIiB5MT0iMjAiIHgyPSI5MCIgeTI9IjIwIiBzdHJva2U9IiM0QTU1NjgiIHN0cm9rZS13aWR0aD0iMiIvPjxsaW5lIHgxPSIxMCIgeTE9IjQwIiB4Mj0iOTAiIHkyPSI0MCIgc3Ryb2tlPSIjNEE1NTY4IiBzdHJva2Utd2lkdGg9IjEiLz48bGluZSB4MT0iMTAiIHkxPSI2MCIgeDI9IjkwIiB5Mj0iNjAiIHN0cm9rZT0iIzRBNTU2OCIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjEwIiB5MT0iODAiIHgyPSI5MCIgeTI9IjgwIiBzdHJva2U9IiM0QTU1NjgiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg=='
   },
   casual: {
     id: 'casual',
     name: 'Casual',
-    color: 'text-themes-casual',
+    color: 'text-green-500',
     fontClass: 'font-sans',
-    spacing: 'space-y-5',
+    spacing: 'p-5',
     headerStyle: 'text-3xl font-bold',
-    sectionTitleStyle: 'text-xl font-medium text-themes-casual mb-3',
+    sectionTitleStyle: 'text-xl font-medium text-green-500 mb-3',
     sectionContentStyle: 'mt-3',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjVmZmY1Ii8+PGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMTAiIGZpbGw9IiM0OEJCNzgiLz48dGV4dCB4PSI0MCIgeT0iMjUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDhCQjc4Ij5DYXN1YWw8L3RleHQ+PGxpbmUgeDE9IjEwIiB5MT0iNDAiIHgyPSI5MCIgeTI9IjQwIiBzdHJva2U9IiM0OEJCNzgiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iNSwyIi8+PC9zdmc+'
   },
-  
-  // Redesigned professional theme
   professional: {
     id: 'professional',
     name: 'Professional',
-    color: 'text-themes-professional',
+    color: 'text-blue-500',
     fontClass: 'font-serif',
-    spacing: 'space-y-6',
-    headerStyle: 'text-2xl font-bold tracking-tight text-themes-professional border-b-2 border-themes-professional pb-2',
-    sectionTitleStyle: 'text-base uppercase font-bold tracking-widest bg-themes-professional text-white py-1 px-3 inline-block mb-3',
-    sectionContentStyle: 'mt-3 pl-3 border-l-2 border-themes-professional/30',
+    spacing: 'p-6',
+    headerStyle: 'text-2xl font-bold tracking-tight text-blue-500 border-b-2 border-blue-500 pb-2',
+    sectionTitleStyle: 'text-base uppercase font-bold tracking-widest bg-blue-500 text-white py-1 px-3 inline-block mb-3',
+    sectionContentStyle: 'mt-3 pl-3 border-l-2 border-blue-500/30',
     backgroundClass: 'bg-white',
     cardStyle: 'p-6 rounded-none shadow-md',
-    borderStyle: 'border-t-8 border-themes-professional',
+    borderStyle: 'border-t-8 border-blue-500',
     imagePlacement: 'right',
     imageStyle: 'w-28 h-28 rounded-none shadow-md border-4 border-white',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmZmZmIi8+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCIgaGVpZ2h0PSI4IiBmaWxsPSIjMzE4MkNFIi8+PHJlY3QgeD0iNzAiIHk9IjIwIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIGZpbGw9IiNmMGYwZjAiIHN0cm9rZT0iI2QxZDVkYiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iMTUiIHk9IjI1IiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMzE4MkNFIj5OYW1lPC90ZXh0PjxsaW5lIHgxPSIxNSIgeTE9IjMwIiB4Mj0iNjAiIHkyPSIzMCIgc3Ryb2tlPSIjMzE4MkNFIiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxNSIgeT0iNDUiIHdpZHRoPSIyNSIgaGVpZ2h0PSI3IiBmaWxsPSIjMzE4MkNFIiByeD0iMCIgcnk9IjAiLz48dGV4dCB4PSIxOCIgeT0iNTAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjQiIGZpbGw9IiNmZmYiPlNFQ1RJT048L3RleHQ+PHJlY3QgeD0iMTUiIHk9IjU1IiB3aWR0aD0iNzAiIGhlaWdodD0iNDAiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2VjZjBmNSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtZGFzaGFycmF5PSIxLDEiLz48bGluZSB4MT0iMjAiIHkxPSI1NSIgeDI9IjIwIiB5Mj0iOTUiIHN0cm9rZT0iI2UxZWRmYiIgc3Ryb2tlLXdpZHRoPSIzIi8+PC9zdmc+'
   },
-  
-  // Redesigned creative theme
   creative: {
     id: 'creative',
     name: 'Creative',
-    color: 'text-themes-creative',
+    color: 'text-pink-500',
     fontClass: 'font-sans',
     spacing: 'space-y-8',
-    headerStyle: 'text-4xl font-black italic text-transparent bg-clip-text bg-gradient-to-r from-themes-creative to-pink-500',
-    sectionTitleStyle: 'text-lg font-bold text-themes-creative relative pl-10 mb-4 before:content-[""] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-8 before:h-[3px] before:bg-themes-creative',
+    headerStyle: 'text-4xl font-black italic text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-pink-500',
+    sectionTitleStyle: 'text-lg font-bold text-pink-500 relative pl-10 mb-4 before:content-[""] before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-8 before:h-[3px] before:bg-pink-500',
     sectionContentStyle: 'mt-4 p-4 rounded-lg bg-pink-50/50',
     backgroundClass: 'bg-gradient-to-br from-white to-pink-50',
     cardStyle: 'p-8 rounded-3xl shadow-xl',
@@ -60,34 +55,30 @@ export const themes: Record<ThemeType, ThemeConfig> = {
     imageStyle: 'w-40 h-40 mx-auto rounded-full border-8 border-white shadow-lg transform -rotate-6',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmUyZjAiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0idGV4dEdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjRUQ2NEE2Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjQ3MmI2Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMjUiIHI9IjE1IiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNmZGUyZjkiIHN0cm9rZS13aWR0aD0iNCIgdHJhbnNmb3JtPSJyb3RhdGUoLTYgNTAgMjUpIi8+PHRleHQgeD0iNTAiIHk9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZvbnQtc3R5bGU9Iml0YWxpYyIgZmlsbD0idXJsKCN0ZXh0R3JhZCkiPkNyZWF0aXZlPC90ZXh0PjxsaW5lIHgxPSIyMCIgeTE9IjY1IiB4Mj0iMzAiIHkyPSI2NSIgc3Ryb2tlPSIjRUQ2NEE2IiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIzNSIgeT0iNjAiIHdpZHRoPSI0NSIgaGVpZ2h0PSIxNSIgZmlsbD0iI2ZmZWNmYyIgcng9IjQiIHJ5PSI0Ii8+PC9zdmc+'
   },
-  
-  // Redesigned modern theme
   modern: {
     id: 'modern',
     name: 'Modern',
-    color: 'text-themes-modern',
+    color: 'text-purple-600',
     fontClass: 'font-sans',
     spacing: 'space-y-7',
-    headerStyle: 'text-3xl font-extrabold tracking-tight text-themes-modern flex flex-col items-center',
-    sectionTitleStyle: 'text-sm font-semibold uppercase tracking-widest text-themes-modern/80 flex items-center after:content-[""] after:ml-2 after:flex-1 after:h-px after:bg-themes-modern/30',
+    headerStyle: 'text-3xl font-extrabold tracking-tight text-purple-600 flex flex-col items-center',
+    sectionTitleStyle: 'text-sm font-semibold uppercase tracking-widest text-purple-600/80 flex items-center after:content-[""] after:ml-2 after:flex-1 after:h-px after:bg-purple-600/30',
     sectionContentStyle: 'mt-4 grid grid-cols-1 gap-4',
     backgroundClass: 'bg-white',
     cardStyle: 'p-7 shadow-lg rounded-xl',
     borderStyle: '',
     imagePlacement: 'center',
-    imageStyle: 'w-32 h-32 mx-auto rounded-full mb-4 ring-4 ring-themes-modern/20 ring-offset-4',
+    imageStyle: 'w-32 h-32 mx-auto rounded-full mb-4 ring-4 ring-purple-600/20 ring-offset-4',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmZmZmIi8+PGNpcmNsZSBjeD0iNTAiIGN5PSIyNSIgcj0iMTUiIGZpbGw9IiNmYWY1ZmYiIHN0cm9rZT0iI2UyZDFmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNTAiIHk9IjUwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiM4MDVBRDUiPk1vZGVybjwvdGV4dD48bGluZSB4MT0iMTAiIHkxPSI2MCIgeDI9IjMwIiB5Mj0iNjAiIHN0cm9rZT0iIzgwNUFENSIgc3Ryb2tlLXdpZHRoPSIxIi8+PGxpbmUgeDE9IjMzIiB5MT0iNjAiIHgyPSI5MCIgeTI9IjYwIiBzdHJva2U9IiNlNWUwZjkiIHN0cm9rZS13aWR0aD0iMSIvPjxyZWN0IHg9IjEwIiB5PSI2NSIgd2lkdGg9IjgwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjZmZmZmZmIiBzdHJva2U9IiNlZWU2ZmYiIHN0cm9rZS13aWR0aD0iMSIgcng9IjQiIHJ5PSI0Ii8+PC9zdmc+'
   },
-  
-  // Redesigned business theme
   business: {
     id: 'business',
     name: 'Business',
-    color: 'text-themes-business',
+    color: 'text-orange-500',
     fontClass: 'font-serif',
     spacing: 'space-y-5',
-    headerStyle: 'text-3xl font-semibold text-themes-business flex items-end gap-4 border-b-2 border-themes-business pb-2',
-    sectionTitleStyle: 'text-lg font-semibold text-white bg-themes-business py-1 px-3 rounded-sm inline-block mb-3 shadow-sm',
+    headerStyle: 'text-3xl font-semibold text-orange-500 flex items-end gap-4 border-b-2 border-orange-500 pb-2',
+    sectionTitleStyle: 'text-lg font-semibold text-white bg-orange-500 py-1 px-3 rounded-sm inline-block mb-3 shadow-sm',
     sectionContentStyle: 'mt-4 px-3',
     backgroundClass: 'bg-amber-50/50',
     cardStyle: 'p-6 rounded-md border border-amber-100 shadow-md',
@@ -96,7 +87,6 @@ export const themes: Record<ThemeType, ThemeConfig> = {
     imageStyle: 'w-28 h-28 rounded-md border-2 border-amber-200 shadow-md mr-4',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmYmYxIi8+PHJlY3QgeD0iMTAiIHk9IjIwIiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9IiNmY2Y3ZWQiIHN0cm9rZT0iI2ZiZDM4ZCIgc3Ryb2tlLXdpZHRoPSIxIi8+PHRleHQgeD0iNDUiIHk9IjMwIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjREQ2QjIwIj5OYW1lPC90ZXh0PjxsaW5lIHgxPSI0NSIgeTE9IjM1IiB4Mj0iOTAiIHkyPSIzNSIgc3Ryb2tlPSIjREQ2QjIwIiBzdHJva2Utd2lkdGg9IjIiLz48cmVjdCB4PSIxMCIgeT0iNTUiIHdpZHRoPSIyNSIgaGVpZ2h0PSI3IiBmaWxsPSIjREQ2QjIwIiByeD0iMCIgcnk9IjAiLz48dGV4dCB4PSIxMiIgeT0iNjAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjQiIGZpbGw9IiNmZmYiPlNFQ1RJT048L3RleHQ+PHJlY3QgeD0iMTAiIHk9IjY1IiB3aWR0aD0iODAiIGhlaWdodD0iMjUiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0iI2ZiZGM5ZCIgc3Ryb2tlLXdpZHRoPSIxIiByeD0iMiIgcnk9IjIiLz48L3N2Zz4='
   },
-  
   minimal: {
     id: 'minimal',
     name: 'Minimal',
@@ -158,10 +148,6 @@ export const themes: Record<ThemeType, ThemeConfig> = {
     imageStyle: 'w-32 h-32 mx-auto rounded-full mb-4 border-4 border-white shadow-md',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZGU2ZmYiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0idGV4dEdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZGIyNzc3Ii8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZTk0YTgzIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMjUiIHI9IjE1IiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSIjZmNlN2Y0IiBzdHJva2Utd2lkdGg9IjQiLz48cmVjdCB4PSIyMCIgeT0iNTAiIHdpZHRoPSI2MCIgaGVpZ2h0PSI1IiBmaWxsPSIjZGIyNzc3Ii8+PHJlY3QgeD0iMjAiIHk9IjYwIiB3aWR0aD0iNjAiIGhlaWdodD0iMTAiIGZpbGw9IiNmZmZmZmYiIHJ4PSIyIiByeT0iMiIgc3Ryb2tlPSIjZmNlN2Y0IiBzdHJva2Utd2lkdGg9IjEiLz48cmVjdCB4PSIyMCIgeT0iODAiIHdpZHRoPSI2MCIgaGVpZ2h0PSIxMCIgZmlsbD0iI2ZmZmZmZiIgcng9IjIiIHJ5PSIyIiBzdHJva2U9IiNmY2U3ZjQiIHN0cm9rZS13aWR0aD0iMSIvPjwvc3ZnPg=='
   },
-  
-  // Four new themes below
-  
-  // New Nordic theme
   nordic: {
     id: 'nordic',
     name: 'Nordic',
@@ -178,8 +164,6 @@ export const themes: Record<ThemeType, ThemeConfig> = {
     imageStyle: 'w-28 h-28 rounded-none grayscale mr-5',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjhmYWZjIi8+PHJlY3QgeD0iMTAiIHk9IjIwIiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9IiNlMmU4ZjAiLz48dGV4dCB4PSI0NSIgeT0iMzAiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEwIiBmaWxsPSIjMzM0MTU1Ij5Ob3JkaWM8L3RleHQ+PGxpbmUgeDE9IjEwIiB5MT0iNTUiIHgyPSI5MCIgeTI9IjU1IiBzdHJva2U9IiNlMmU4ZjAiIHN0cm9rZS13aWR0aD0iMSIvPjx0ZXh0IHg9IjEwIiB5PSI2NSIgZm9udC1mYW1pbHk9InNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iNSIgZmlsbD0iIzY0NzQ4YiI+U0VDVElPTiBUSVRMRTwvdGV4dD48cmVjdCB4PSIxMCIgeT0iNzAiIHdpZHRoPSI4MCIgaGVpZ2h0PSIyMCIgZmlsbD0iI2ZhZmFmYiIgc3Ryb2tlPSIjZTJlOGYwIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4='
   },
-  
-  // New Blueprint theme
   blueprint: {
     id: 'blueprint',
     name: 'Blueprint',
@@ -196,8 +180,6 @@ export const themes: Record<ThemeType, ThemeConfig> = {
     imageStyle: 'w-28 h-28 rounded border-2 border-blue-300 p-1 float-right ml-4',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZWZmNmZmIi8+PHJlY3QgeD0iNjAiIHk9IjIwIiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9IiNkYmVhZmUiIHN0cm9rZT0iI2JmZGJmZSIgc3Ryb2tlLXdpZHRoPSIxIi8+PHRleHQgeD0iMjAiIHk9IjI1IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjEwIiBmaWxsPSIjMWUzYThhIj5CbHVlcHJpbnQ8L3RleHQ+PHJlY3QgeD0iMTAiIHk9IjQwIiB3aWR0aD0iMzAiIGhlaWdodD0iOCIgZmlsbD0iI2RiZWFmZSIgcng9IjAiIHJ5PSIwIi8+PHRleHQgeD0iMTIiIHk9IjQ2IiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjQiIGZpbGw9IiMxZTNhOGEiPlNFQ1RJT048L3RleHQ+PGxpbmUgeDE9IjEyIiB5MT0iNjAiIHgyPSIxMiIgeTI9IjkwIiBzdHJva2U9IiNiZmRiZmUiIHN0cm9rZS13aWR0aD0iMiIvPjxyZWN0IHg9IjE1IiB5PSI1MCIgd2lkdGg9Ijc1IiBoZWlnaHQ9IjQwIiBmaWxsPSIjZWZmNmZmIiBzdHJva2U9IiNkYmVhZmUiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iNCwyIi8+PC9zdmc+'
   },
-  
-  // New Gradient theme
   gradient: {
     id: 'gradient',
     name: 'Gradient',
@@ -214,8 +196,6 @@ export const themes: Record<ThemeType, ThemeConfig> = {
     imageStyle: 'w-32 h-32 mx-auto rounded-full border-4 border-white shadow-lg mb-4 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZWVlMWZmIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNmNWU3ZmYiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWU1ZjgiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0idGV4dEdyYWQiIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjNjM2NmYxIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNhODU1ZjciLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYzRiYTkiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iYnRuR3JhZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM2MzY2ZjEiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNhODU1ZjciLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2JnKSIvPjxjaXJjbGUgY3g9IjUwIiBjeT0iMjUiIHI9IjE1IiBmaWxsPSJ3aGl0ZSIgc3Ryb2tlPSJ1cmwoI2J0bkdyYWQpIiBzdHJva2Utd2lkdGg9IjMiLz48dGV4dCB4PSI1MCIgeT0iNDUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtZmFtaWx5PSJzYW5zLXNlcmlmIiBmb250LXNpemU9IjEwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0idXJsKCN0ZXh0R3JhZCkiPkdyYWRpZW50PC90ZXh0PjxyZWN0IHg9IjIwIiB5PSI1NSIgd2lkdGg9IjYwIiBoZWlnaHQ9IjEwIiByeD0iNSIgcnk9IjUiIGZpbGw9InVybCgjYnRuR3JhZCkiLz48cmVjdCB4PSIyMCIgeT0iNzAiIHdpZHRoPSI2MCIgaGVpZ2h0PSIyMCIgcng9IjUiIHJ5PSI1IiBmaWxsPSIjZmZmZmZmIiBmaWxsLW9wYWNpdHk9IjAuOSIgc3Ryb2tlPSIjZmZmZmZmIiBzdHJva2Utd2lkdGg9IjEiLz48L3N2Zz4='
   },
-  
-  // New Retro theme
   retro: {
     id: 'retro',
     name: 'Retro',
@@ -231,8 +211,7 @@ export const themes: Record<ThemeType, ThemeConfig> = {
     imagePlacement: 'left',
     imageStyle: 'w-28 h-28 p-1 border-2 border-amber-700 mr-4 grayscale sepia',
     preview: 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmYmViIi8+PHJlY3QgeD0iMTAiIHk9IjIwIiB3aWR0aD0iMjUiIGhlaWdodD0iMjUiIGZpbGw9IiNmZmYiIHN0cm9rZT0iI2I0NWMwOSIgc3Ryb2tlLXdpZHRoPSIyIi8+PHRleHQgeD0iNDUiIHk9IjMwIiBmb250LWZhbWlseT0ibW9ub3NwYWNlIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2I0NWMwOSI+UkVUUk88L3RleHQ+PGxpbmUgeDE9IjEwIiB5MT0iMzUiIHgyPSI5MCIgeTI9IjM1IiBzdHJva2U9IiNiNDVjMDkiIHN0cm9rZS13aWR0aD0iMyIvPjxyZWN0IHg9IjEwIiB5PSI0NSIgd2lkdGg9IjMwIiBoZWlnaHQ9IjEwIiBmaWxsPSIjZmRlNjhhIiBzdHJva2U9IiNiNDVjMDkiIHN0cm9rZS13aWR0aD0iMiIvPjx0ZXh0IHg9IjE1IiB5PSI1MiIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSI2IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2I0NWMwOSI+U0VDVElPTjwvdGV4dD48cmVjdCB4PSIxMCIgeT0iNjAiIHdpZHRoPSI4MCIgaGVpZ2h0PSIzMCIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjZmRlNjhhIiBzdHJva2Utd2lkdGg9IjIiLz48L3N2Zz4='
-  },
-  
+  }, 
   academic: {
     id: 'academic',
     name: 'Academic',

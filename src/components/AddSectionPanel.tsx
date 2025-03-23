@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { 
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -10,8 +10,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
-import { Checkbox } from '@/components/ui/checkbox';
-import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { BookUp, GripVertical } from 'lucide-react';
 import { CVData } from '@/lib/types';
@@ -24,10 +22,7 @@ interface ConfigurationPanelProps {
 
 export function AddSection({ cvData, onChange }: ConfigurationPanelProps) {
   const [open, setOpen] = useState(false);
-  const [sectionConfig, setSectionConfig] = useState({
-    visibility: true,
-    title: '',
-  })
+  const [sectionConfig, setSectionConfig] = useState({ visibility: true, title: '' })
 
   const handleApplyChanges = () => {
     const newSectionKey = sectionConfig.title.split(' ').join('').toLocaleLowerCase()
@@ -49,15 +44,13 @@ export function AddSection({ cvData, onChange }: ConfigurationPanelProps) {
     })
     toast.success('CV configuration applied successfully');
     setOpen(false);
+    setSectionConfig({ visibility: true, title: '' });
   };
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <Button 
-          variant="outline" 
-          className="w-full flex items-center gap-2 justify-center"
-        >
+        <Button variant="link">
           <BookUp className="h-4 w-4" />
           <span>Add New Section</span>
         </Button>
@@ -66,45 +59,22 @@ export function AddSection({ cvData, onChange }: ConfigurationPanelProps) {
         <DialogHeader>
           <DialogTitle>Add New Section</DialogTitle>
           <DialogDescription>
-            Customize visibility, title, and order of your CV section.
+            The new section will appear next to the other sections like Skills
           </DialogDescription>
         </DialogHeader>
         <div className="py-4 space-y-6 max-h-[60vh] overflow-y-auto">
           <div className="space-y-4">
-            <h3 className="text-sm font-medium">Section Order & Visibility</h3>
-            <div className="grid gap-4">
-                <div 
-                  className="flex items-center gap-3 p-3 bg-gray-50 rounded-md border"
-                >
-                  <div className="flex items-center">
-                    <GripVertical className="h-5 w-5 text-gray-400" />
-                  </div>
-                  <div className="flex-1 space-y-2">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <Checkbox 
-                          id={`new-section`}
-                          checked={sectionConfig.visibility}
-                          onCheckedChange={() => setSectionConfig((prev)=>({ ...prev, visibility: !prev.visibility }))}
-                        />
-                        <Label htmlFor={`new-section`} className="font-medium capitalize">
-                          {sectionConfig.title ?? 'Section Title'}
-                        </Label>
-                      </div>
-                      <div className="flex items-center space-x-1">
-                      </div>
-                    </div>
-                    <div>
-                      <Input
-                        id={`new-title`}
-                        value={sectionConfig.title}
-                        onChange={(e) => setSectionConfig((prev)=>({ ...prev, title: e.target.value }))}
-                        placeholder={'Section Title'}
-                        className="h-8 text-sm"
-                      />
-                    </div>
-                  </div>
-                </div>
+            <h3 className="text-sm font-medium">Section Title</h3>
+            <div className="flex items-center gap-3 p-3">
+              <div className="flex-1 space-y-2">
+                  <Input
+                    id={`new-title`}
+                    value={sectionConfig.title}
+                    onChange={(e) => setSectionConfig((prev) => ({ ...prev, title: e.target.value }))}
+                    placeholder={'Section Title'}
+                    className="h-8 text-md"
+                  />
+              </div>
             </div>
           </div>
         </div>

@@ -63,24 +63,6 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				themes: {
-					basic: '#4A5568',
-					casual: '#48BB78',
-					professional: '#3182CE',
-					creative: '#ED64A6',
-					modern: '#805AD5',
-					business: '#DD6B20',
-					minimal: '#475569',
-					elegant: '#047857',
-					technical: '#0369A1',
-					vibrant: '#C026D3',
-					academic: '#4338CA',
-					corporate: '#475569',
-					artistic: '#E11D48',
-					classic: '#44403C',
-					digital: '#0891B2',
-					futuristic: '#7C3AED'
-				}
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
