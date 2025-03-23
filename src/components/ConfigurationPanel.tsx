@@ -13,7 +13,7 @@ import {
 import { Checkbox } from '@/components/ui/checkbox';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import { Settings, MoveVertical, GripVertical, MoveUp, MoveDown } from 'lucide-react';
+import { Settings, MoveVertical, GripVertical, MoveUp, MoveDown, Trash2Icon } from 'lucide-react';
 import { SectionConfig, SectionVisibility, SectionTitles, SectionOrder, CVData } from '@/lib/types';
 import { toast } from 'sonner';
 
@@ -75,6 +75,19 @@ export function ConfigurationPanel({ cvData, onChange }: ConfigurationPanelProps
     }));
   };
 
+  const handleRemoveSection = (section: string) => {
+      const newSectionConfig = { ...sectionConfig };
+      delete newSectionConfig.visibility[section];
+      delete newSectionConfig.titles[section];
+      newSectionConfig.order = newSectionConfig.order.filter(item => item !== section);
+      const newCvData = { ...cvData };
+      delete newCvData[section];
+      onChange({
+        ...newCvData,
+        sectionConfig: newSectionConfig
+      });
+  };
+
   const moveSection = (index: number, direction: 'up' | 'down') => {
     const newOrder = [...sectionConfig.order];
     if (direction === 'up' && index > 0) {
@@ -96,6 +109,15 @@ export function ConfigurationPanel({ cvData, onChange }: ConfigurationPanelProps
     toast.success('CV configuration applied successfully');
     setOpen(false);
   };
+
+  const showDeleteButton = (key: string) => ![
+    'basicInfo',
+    'summary',
+    'experiences',
+    'education',
+    'skills',
+    'projects'
+  ].includes(key);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -137,6 +159,14 @@ export function ConfigurationPanel({ cvData, onChange }: ConfigurationPanelProps
                         </Label>
                       </div>
                       <div className="flex items-center space-x-1">
+                        {showDeleteButton(sectionKey) && <Button 
+                          variant="ghost" 
+                          size="sm" 
+                          onClick={() => handleRemoveSection(sectionKey)}
+                          className="h-8 w-8 p-0"
+                        >
+                          <Trash2Icon color='red' className="h-4 w-4" />
+                        </Button>}
                         <Button 
                           variant="ghost" 
                           size="sm" 
