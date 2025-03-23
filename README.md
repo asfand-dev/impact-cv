@@ -96,6 +96,147 @@ To run ImpactCV locally, follow these steps:
 
     This will start the application on a local development server (`http://localhost:3000`).
 
+
+## 📸 Screenshots
+
+Here are some screenshots showcasing the ImpactCV interface and its features:
+
+<table style="width:100%">
+  <tr>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/ui-1.png" alt="Main Layout 1" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Main Layout 1</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/ui-2.png" alt="Main Layout 2" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Main Layout 2</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/ui-3.png" alt="Main Layout 3" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Main Layout 3</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/ui-configure-section.png" alt="Configure Sections" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Configure Sections</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/ui-add-section.png" alt="Add Section" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Add Section</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/ui-tailor-cv.png" alt="Tailor for Job Description" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Tailor for Job Description</p>
+    </td>
+  </tr>
+</table>
+
+## 🎨 Supported Themes
+
+<table style="width:100%">
+  <tr>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/basic.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Basic</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/gradient.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Gradient</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/professional.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Professional</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/creative.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Creative</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/artistic.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Artistic</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/business.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Business</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/digital.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Digital</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/elegant.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Elegant</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/technical.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Technical</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/vibrant.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Vibrant</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/nordic.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Nordic</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/blueprint.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Blueprint</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/casual.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Casual</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/retro.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Retro</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/academic.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Academic</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/corporate.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Corporate</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/modern.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Modern</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/classic.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Classic</p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/minimal.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Minimal</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/futuristic.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Futuristic</p>
+    </td>
+    <td style="text-align:center">
+      <img src="./documentation/screenshots/without-photo-1.png" style="border: 1px solid #ddd; border-radius: 5px; padding: 5px; width: 100%;">
+      <p style="text-align: center;">Without Photo</p>
+    </td>
+  </tr>
+</table>
+
 ## ✍️ Usage
 
 1.  **Navigate the Left Sidebar:** Use the clearly separated sections in the left sidebar to input your information.
