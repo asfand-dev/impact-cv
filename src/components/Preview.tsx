@@ -1,16 +1,15 @@
-
-import { CVData, ThemeType } from '@/lib/types';
-import { themes } from '@/lib/themes';
-import { formatDate } from '@/lib/utils';
-import { 
-  Mail, 
-  MapPin, 
-  Phone, 
-  Globe, 
-  Github, 
+import { CVData, ThemeType } from "@/lib/types";
+import { themes } from "@/lib/themes";
+import { formatDate } from "@/lib/utils";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  Globe,
+  Github,
   Linkedin,
-  Calendar
-} from 'lucide-react';
+  Calendar,
+} from "lucide-react";
 
 interface PreviewProps {
   data: CVData;
@@ -18,7 +17,7 @@ interface PreviewProps {
 
 export function Preview({ data }: PreviewProps) {
   const theme = themes[data.activeTheme];
-  
+
   // Use section configuration if available, otherwise use defaults
   const visibility = data.sectionConfig?.visibility || {
     basicInfo: true,
@@ -26,72 +25,94 @@ export function Preview({ data }: PreviewProps) {
     experiences: true,
     education: true,
     skills: true,
-    projects: true
+    projects: true,
   };
-  
+
   const titles = data.sectionConfig?.titles || {
-    summary: 'Summary',
-    experiences: 'Experience',
-    education: 'Education',
-    skills: 'Skills',
-    projects: 'Projects'
+    summary: "Summary",
+    experiences: "Experience",
+    education: "Education",
+    skills: "Skills",
+    projects: "Projects",
   };
-  
-  const order = data.sectionConfig?.order || ['summary', 'experiences', 'education', 'skills', 'projects'];
+
+  const order = data.sectionConfig?.order || [
+    "summary",
+    "experiences",
+    "education",
+    "skills",
+    "projects",
+  ];
 
   // Get background and card styles if they exist
-  const backgroundClass = theme.backgroundClass || 'bg-white';
-  const cardStyle = theme.cardStyle || '';
-  const borderStyle = theme.borderStyle || '';
-  
+  const backgroundClass = theme.backgroundClass || "bg-white";
+  const cardStyle = theme.cardStyle || "";
+  const borderStyle = theme.borderStyle || "";
+
   // Handle photo display
   const hasPhoto = !!data.basicInfo.photo;
-  const imagePlacement = theme.imagePlacement || 'left';
-  const imageStyle = theme.imageStyle || 'w-24 h-24 rounded-full';
-  
+  const imagePlacement = theme.imagePlacement || "left";
+  const imageStyle = theme.imageStyle || "w-24 h-24 rounded-full";
+
   const renderPhotoHeader = () => {
     if (!hasPhoto) return null;
-    
-    if (imagePlacement === 'left') {
+
+    if (imagePlacement === "left") {
       return (
         <div className="flex items-start gap-6 mb-6">
-          <img 
-            src={data.basicInfo.photo} 
-            alt={data.basicInfo.name} 
+          <img
+            src={data.basicInfo.photo}
+            alt={data.basicInfo.name}
             className={imageStyle + " object-cover"}
           />
           <div className="flex-1">
-            <h1 className={`${theme.headerStyle} ${theme.color}`}>{data.basicInfo.name}</h1>
-            <h2 className="text-lg font-medium text-gray-700 mt-1">{data.basicInfo.role}</h2>
+            <h1 className={`${theme.headerStyle} ${theme.color}`}>
+              {data.basicInfo.name}
+            </h1>
+            <h2 className="text-lg font-medium text-gray-700 mt-1">
+              {data.basicInfo.role}
+            </h2>
             {renderContactInfo()}
           </div>
         </div>
       );
-    } else if (imagePlacement === 'right') {
+    } else if (imagePlacement === "right") {
       return (
         <div className="flex items-start gap-6 mb-6">
           <div className="flex-1">
-            <h1 className={`${theme.headerStyle} ${theme.color}`}>{data.basicInfo.name}</h1>
-            <h2 className="text-lg font-medium text-gray-700 mt-1">{data.basicInfo.role}</h2>
+            <h1 className={`${theme.headerStyle} ${theme.color}`}>
+              {data.basicInfo.name}
+            </h1>
+            <h2 className="text-lg font-medium text-gray-700 mt-1">
+              {data.basicInfo.role}
+            </h2>
             {renderContactInfo()}
           </div>
-          <img 
-            src={data.basicInfo.photo} 
-            alt={data.basicInfo.name} 
+          <img
+            src={data.basicInfo.photo}
+            alt={data.basicInfo.name}
             className={imageStyle + " object-cover"}
           />
         </div>
       );
-    } else if (imagePlacement === 'top' || imagePlacement === 'center') {
+    } else if (imagePlacement === "top" || imagePlacement === "center") {
       return (
         <div className="text-center mb-6">
-          <img 
-            src={data.basicInfo.photo} 
-            alt={data.basicInfo.name} 
-            className={imageStyle + " object-cover " + (imagePlacement === 'center' ? 'mx-auto' : '')}
+          <img
+            src={data.basicInfo.photo}
+            alt={data.basicInfo.name}
+            className={
+              imageStyle +
+              " object-cover " +
+              (imagePlacement === "center" ? "mx-auto" : "")
+            }
           />
-          <h1 className={`${theme.headerStyle} ${theme.color} mt-4`}>{data.basicInfo.name}</h1>
-          <h2 className="text-lg font-medium text-gray-700 mt-1">{data.basicInfo.role}</h2>
+          <h1 className={`${theme.headerStyle} ${theme.color} mt-4`}>
+            {data.basicInfo.name}
+          </h1>
+          <h2 className="text-lg font-medium text-gray-700 mt-1">
+            {data.basicInfo.role}
+          </h2>
           <div className="flex flex-wrap gap-3 mt-3 text-sm text-gray-600 justify-center">
             {renderContactItems()}
           </div>
@@ -99,7 +120,7 @@ export function Preview({ data }: PreviewProps) {
       );
     }
   };
-  
+
   const renderContactItems = () => {
     return (
       <>
@@ -109,35 +130,35 @@ export function Preview({ data }: PreviewProps) {
             <span>{data.basicInfo.location}</span>
           </div>
         )}
-        
+
         {data.basicInfo.email && (
           <div className="flex items-center gap-1">
             <Mail className="h-4 w-4" />
             <span>{data.basicInfo.email}</span>
           </div>
         )}
-        
+
         {data.basicInfo.phone && (
           <div className="flex items-center gap-1">
             <Phone className="h-4 w-4" />
             <span>{data.basicInfo.phone}</span>
           </div>
         )}
-        
+
         {data.basicInfo.website && (
           <div className="flex items-center gap-1">
             <Globe className="h-4 w-4" />
             <span>{data.basicInfo.website}</span>
           </div>
         )}
-        
+
         {data.basicInfo.github && (
           <div className="flex items-center gap-1">
             <Github className="h-4 w-4" />
             <span>{data.basicInfo.github}</span>
           </div>
         )}
-        
+
         {data.basicInfo.linkedin && (
           <div className="flex items-center gap-1">
             <Linkedin className="h-4 w-4" />
@@ -147,7 +168,7 @@ export function Preview({ data }: PreviewProps) {
       </>
     );
   };
-  
+
   const renderContactInfo = () => {
     return (
       <div className="flex flex-wrap gap-3 mt-3 text-sm text-gray-600">
@@ -155,12 +176,16 @@ export function Preview({ data }: PreviewProps) {
       </div>
     );
   };
-  
+
   const renderStandardHeader = () => {
     return (
       <header className="mb-6">
-        <h1 className={`${theme.headerStyle} ${theme.color}`}>{data.basicInfo.name}</h1>
-        <h2 className="text-lg font-medium text-gray-700 mt-1">{data.basicInfo.role}</h2>
+        <h1 className={`${theme.headerStyle} ${theme.color}`}>
+          {data.basicInfo.name}
+        </h1>
+        <h2 className="text-lg font-medium text-gray-700 mt-1">
+          {data.basicInfo.role}
+        </h2>
         {renderContactInfo()}
       </header>
     );
@@ -173,20 +198,25 @@ export function Preview({ data }: PreviewProps) {
         return null;
       }
 
-      if(sectionKey && !['summary', 'experiences', 'education', 'skills', 'projects'].includes(sectionKey)) {
+      if (
+        sectionKey &&
+        !["summary", "experiences", "education", "skills", "projects"].includes(
+          sectionKey
+        )
+      ) {
         return renderGeneralSection(sectionKey);
       }
 
       switch (sectionKey) {
-        case 'summary':
+        case "summary":
           return renderSummarySection();
-        case 'experiences':
+        case "experiences":
           return renderExperiencesSection();
-        case 'education':
+        case "education":
           return renderEducationSection();
-        case 'skills':
+        case "skills":
           return renderSkillsSection();
-        case 'projects':
+        case "projects":
           return renderProjectsSection();
         default:
           return null;
@@ -196,7 +226,7 @@ export function Preview({ data }: PreviewProps) {
 
   const renderSummarySection = () => {
     if (!data.summary.content || !visibility.summary) return null;
-    
+
     return (
       <section key="summary" className="mb-6 animate-fade-in">
         <h3 className={theme.sectionTitleStyle}>{titles.summary}</h3>
@@ -209,7 +239,7 @@ export function Preview({ data }: PreviewProps) {
 
   const renderExperiencesSection = () => {
     if (data.experiences.length === 0 || !visibility.experiences) return null;
-    
+
     return (
       <section key="experiences" className="mb-6 animate-fade-in">
         <h3 className={theme.sectionTitleStyle}>{titles.experiences}</h3>
@@ -225,7 +255,8 @@ export function Preview({ data }: PreviewProps) {
                   <div className="flex items-center gap-1 text-sm text-gray-600">
                     <Calendar className="h-3 w-3" />
                     <span>
-                      {formatDate(exp.startDate)} - {exp.current ? 'Present' : formatDate(exp.endDate)}
+                      {formatDate(exp.startDate)} -{" "}
+                      {exp.current ? "Present" : formatDate(exp.endDate)}
                     </span>
                   </div>
                 </div>
@@ -234,7 +265,9 @@ export function Preview({ data }: PreviewProps) {
                     {exp.achievements.map((achievement, i) => (
                       <li key={i} className="flex items-start">
                         <span className="mr-2">•</span>
-                        <span>{achievement}</span>
+                        <span
+                          dangerouslySetInnerHTML={{ __html: achievement }}
+                        />
                       </li>
                     ))}
                   </ul>
@@ -249,7 +282,7 @@ export function Preview({ data }: PreviewProps) {
 
   const renderEducationSection = () => {
     if (data.education.length === 0 || !visibility.education) return null;
-    
+
     return (
       <section key="education" className="mb-6 animate-fade-in">
         <h3 className={theme.sectionTitleStyle}>{titles.education}</h3>
@@ -261,16 +294,21 @@ export function Preview({ data }: PreviewProps) {
                   <div>
                     <h4 className="font-semibold">{edu.degree}</h4>
                     <div className="text-gray-700">{edu.institute}</div>
-                    {edu.location && <div className="text-sm text-gray-600">{edu.location}</div>}
+                    {edu.location && (
+                      <div className="text-sm text-gray-600">
+                        {edu.location}
+                      </div>
+                    )}
                   </div>
-                  {edu.startDate && (edu.current || edu.endDate) && 
+                  {edu.startDate && (edu.current || edu.endDate) && (
                     <div className="flex items-center gap-1 text-sm text-gray-600">
-                    <Calendar className="h-3 w-3" />
-                    <span>
-                      {formatDate(edu.startDate)} - {edu.current ? 'Present' : formatDate(edu.endDate)}
-                    </span>
+                      <Calendar className="h-3 w-3" />
+                      <span>
+                        {formatDate(edu.startDate)} -{" "}
+                        {edu.current ? "Present" : formatDate(edu.endDate)}
+                      </span>
                     </div>
-                  }
+                  )}
                 </div>
               </div>
             ))}
@@ -282,7 +320,7 @@ export function Preview({ data }: PreviewProps) {
 
   const renderSkillsSection = () => {
     if (data.skills.length === 0 || !visibility.skills) return null;
-    
+
     return (
       <section key="skills" className="mb-6 animate-fade-in">
         <h3 className={theme.sectionTitleStyle}>{titles.skills}</h3>
@@ -302,7 +340,7 @@ export function Preview({ data }: PreviewProps) {
 
   const renderGeneralSection = (key: string) => {
     if (data[key].length === 0 || !visibility[key]) return null;
-    
+
     return (
       <section key={key} className="mb-6 animate-fade-in">
         <h3 className={theme.sectionTitleStyle}>{titles[key]}</h3>
@@ -322,7 +360,7 @@ export function Preview({ data }: PreviewProps) {
 
   const renderProjectsSection = () => {
     if (data.projects.length === 0 || !visibility.projects) return null;
-    
+
     return (
       <section key="projects" className="mb-6 animate-fade-in">
         <h3 className={theme.sectionTitleStyle}>{titles.projects}</h3>
@@ -333,7 +371,9 @@ export function Preview({ data }: PreviewProps) {
                 <div className="flex justify-between items-start">
                   <div>
                     <h4 className="font-semibold">{project.name}</h4>
-                    {project.company && <div className="text-gray-700">{project.company}</div>}
+                    {project.company && (
+                      <div className="text-gray-700">{project.company}</div>
+                    )}
                   </div>
                 </div>
                 {project.details.length > 0 && (
